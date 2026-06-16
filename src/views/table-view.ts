@@ -5,9 +5,11 @@ import {
   CONTENT_NAME_FIELD_UNIVERSAL_IDENTIFIER,
   CONTENT_TYPE_FIELD_UNIVERSAL_IDENTIFIER,
   CONTENT_STATUS_FIELD_UNIVERSAL_IDENTIFIER,
+  CONTENT_PUBLISH_AT_FIELD_UNIVERSAL_IDENTIFIER,
   CONTENT_MEDIA_FIELD_UNIVERSAL_IDENTIFIER,
   CONTENT_DESCRIPTION_FIELD_UNIVERSAL_IDENTIFIER,
   TABLE_VIEW_UNIVERSAL_IDENTIFIER,
+  TABLE_VIEW_PUBLISH_AT_FIELD_UNIVERSAL_IDENTIFIER,
 } from 'src/constants/universal-identifiers';
 
 export default defineView({
@@ -37,15 +39,21 @@ export default defineView({
       isVisible: true,
     },
     {
+      universalIdentifier: TABLE_VIEW_PUBLISH_AT_FIELD_UNIVERSAL_IDENTIFIER,
+      fieldMetadataUniversalIdentifier: CONTENT_PUBLISH_AT_FIELD_UNIVERSAL_IDENTIFIER,
+      position: 3,
+      isVisible: true,
+    },
+    {
       universalIdentifier: 'f98414d6-2cfc-4b06-89db-fef0ebd4f988',
       fieldMetadataUniversalIdentifier: CONTENT_MEDIA_FIELD_UNIVERSAL_IDENTIFIER,
-      position: 3,
+      position: 4,
       isVisible: true,
     },
     {
       universalIdentifier: '7f4b3eec-4927-4a96-a409-e4a690ebe881',
       fieldMetadataUniversalIdentifier: CONTENT_DESCRIPTION_FIELD_UNIVERSAL_IDENTIFIER,
-      position: 4,
+      position: 5,
       isVisible: true,
     },
   ],

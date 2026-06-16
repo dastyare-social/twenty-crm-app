@@ -7,6 +7,7 @@ import {
   CONTENT_OBJECT_UNIVERSAL_IDENTIFIER,
   CONTENT_STATUS_FIELD_UNIVERSAL_IDENTIFIER,
   CONTENT_TYPE_FIELD_UNIVERSAL_IDENTIFIER,
+  CONTENT_PUBLISH_AT_FIELD_UNIVERSAL_IDENTIFIER,
 } from 'src/constants/universal-identifiers';
 
 export default defineObject({
@@ -146,6 +147,14 @@ export default defineObject({
           color: 'red',
         },
       ],
+    },
+    {
+      universalIdentifier: CONTENT_PUBLISH_AT_FIELD_UNIVERSAL_IDENTIFIER,
+      type: FieldType.DATE_TIME,
+      name: 'publishAt',
+      label: 'Publish At',
+      description: 'Date and time when the content should be published.',
+      icon: 'IconCalendarEvent',
     },
   ],
 });
