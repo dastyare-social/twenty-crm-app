@@ -39,6 +39,7 @@ export default defineObject({
       label: 'Type',
       description: 'Content type.',
       icon: 'IconClipboardText',
+      defaultValue: `'SHORT_FORM'`,
       options: [
         {
           id: '84b9f8bf-304d-43d5-89a1-8d9cfbfe5f74',
@@ -73,6 +74,8 @@ export default defineObject({
       name: 'description',
       label: 'Description',
       description: 'Rich text description of the content.',
+      isNullable: false,
+      isUIEditable: true,
       icon: 'IconNotes',
     },
     {
