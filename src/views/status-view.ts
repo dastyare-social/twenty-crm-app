@@ -24,6 +24,7 @@ import {
   STATUS_VIEW_GROUP_PUBLISHING_UNIVERSAL_IDENTIFIER,
   STATUS_VIEW_GROUP_PUBLISHED_UNIVERSAL_IDENTIFIER,
   STATUS_VIEW_GROUP_ARCHIVED_UNIVERSAL_IDENTIFIER,
+  STATUS_VIEW_GROUP_READY_TO_PUBLISH_UNIVERSAL_IDENTIFIER,
 } from 'src/constants/universal-identifiers';
 
 export default defineView({
@@ -111,22 +112,28 @@ export default defineView({
       position: 5,
     },
     {
-      universalIdentifier: STATUS_VIEW_GROUP_PUBLISHING_UNIVERSAL_IDENTIFIER,
-      fieldValue: 'OPT07_PUBLISHING',
+      universalIdentifier: STATUS_VIEW_GROUP_READY_TO_PUBLISH_UNIVERSAL_IDENTIFIER,
+      fieldValue: 'OPT07_READY_TO_PUBLISH',
       isVisible: true,
       position: 6,
     },
     {
-      universalIdentifier: STATUS_VIEW_GROUP_PUBLISHED_UNIVERSAL_IDENTIFIER,
-      fieldValue: 'OPT08_PUBLISHED',
+      universalIdentifier: STATUS_VIEW_GROUP_PUBLISHING_UNIVERSAL_IDENTIFIER,
+      fieldValue: 'OPT08_PUBLISHING',
       isVisible: true,
       position: 7,
     },
     {
-      universalIdentifier: STATUS_VIEW_GROUP_ARCHIVED_UNIVERSAL_IDENTIFIER,
-      fieldValue: 'OPT09_ARCHIVED',
+      universalIdentifier: STATUS_VIEW_GROUP_PUBLISHED_UNIVERSAL_IDENTIFIER,
+      fieldValue: 'OPT09_PUBLISHED',
       isVisible: true,
       position: 8,
+    },
+    {
+      universalIdentifier: STATUS_VIEW_GROUP_ARCHIVED_UNIVERSAL_IDENTIFIER,
+      fieldValue: 'OPT10_ARCHIVED',
+      isVisible: true,
+      position: 9,
     },
   ],
 });
