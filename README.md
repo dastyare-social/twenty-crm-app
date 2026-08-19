@@ -29,28 +29,37 @@
 
 <!-- Replace the placeholders below with actual screenshots -->
 
-| Status View (Kanban) | Table View | Record Page |
+| Status View (Kanban) | Content Calendar | Content Dashboard |
 |:---:|:---:|:---:|
-| ![Status View](screenshots/status-view.png) | ![Table View](screenshots/table-view.png) | ![Record Page](screenshots/record-page.png) |
+| ![Status View](screenshots/status-view.png) | ![Content Calendar](screenshots/content-calendar.png) | ![Content Dashboard](screenshots/content-dashboard.png) |
+
+| Project by Type | Funnel Leads | Campaign by Type |
+|:---:|:---:|:---:|
+| ![Project by Type](screenshots/project-by-type.png) | ![Funnel Leads](screenshots/funnel-leads.png) | ![Campaign by Type](screenshots/campaign-by-type.png) |
 
 ---
 
 ## Features
 
-- **Content Object** — manage content pieces with topic, type, status, media, description, and publish date
+- **Content Pieces** — manage content with topic, type, status, media, description, publish date, pillar, platform, campaign link, and metrics (views/likes)
+- **Projects** — track client deliveries, product builds, marketing campaigns, and personal brand work
+- **Campaigns** — weekly cadence, workshops, product launches, and funnel pushes
+- **Funnel Leads** — capture leads from magnets, quizzes, workshops, and waitlists with scorecard tier tracking
 - **Status Kanban** — visual pipeline from Idea to Published with 10 workflow stages
-- **Table View** — sortable list of all content records
+- **Content Calendar** — calendar view of content by publish date
+- **Content Dashboard** — metrics on published content, pillar breakdown, and upcoming queue
 - **Record Page** — detailed view with Home, Timeline, Tasks, and Notes tabs
-- **Publishing Workflow** — track content through: Idea &rarr; Approved &rarr; Scripting &rarr; Filming &rarr; On Review &rarr; Publishing Prep &rarr; Ready to Publish &rarr; Publishing &rarr; Published &rarr; Archived
 - **Seed Data** — automatically populates example content on install
 - **CI/CD** — GitHub Actions for testing and deployment
 
-## Content Types
+## Objects
 
-| Type | Description |
-|------|-------------|
-| Short-Form | Quick social media posts, reels, stories |
-| Long-Form | Blog posts, scripts, in-depth articles |
+| Object | Description |
+|--------|-------------|
+| **Content Pieces** | Every post across every platform — topic, type, status, pillar, platform, campaign, metrics |
+| **Projects** | Client deliveries, DS product builds, marketing, personal brand, internal ops |
+| **Campaigns** | Weekly cadence, workshops, product launches, funnel pushes |
+| **Funnel Leads** | Magnet/quiz/workshop/waitlist captures with scorecard tier scoring |
 
 ## Prerequisites
 
@@ -111,23 +120,43 @@ src/
   constants/
     universal-identifiers.ts     # All UUIDs used across the app
   objects/
-    content.object.ts            # Content data model
+    content.object.ts            # Content data model (topic, type, status, pillar, platform, metrics)
+    project.object.ts            # Projects (client delivery, product builds, marketing, personal brand)
+    campaign.object.ts           # Campaigns (weekly cadence, workshops, launches, funnels)
+    funnel-lead.object.ts        # Funnel leads (magnet, quiz, workshop, waitlist captures)
   views/
-    status-view.ts               # Kanban view grouped by status
+    status-view.ts               # Kanban view grouped by status (Content)
     table-view.ts                # Table view of all content
+    content-calendar-view.ts     # Calendar view by publish date
+    project-by-type-view.ts      # Kanban view grouped by project type
+    project-active-view.ts       # Active projects table
+    project-personal-brand-view.ts # Personal brand projects
+    campaign-active-view.ts      # Active campaigns table
+    campaign-by-type-view.ts     # Kanban view grouped by campaign type
+    funnel-lead-by-source-view.ts # Kanban view grouped by source
+    funnel-lead-scorecard-view.ts # Scorecard tier breakdown
+    funnel-lead-uncontacted-view.ts # Uncontacted leads
   navigation-menu-items/
     contents.ts                  # Contents folder in sidebar
     status-view.ts               # Status View nav item
     table-view.ts                # Table View nav item
+    content-calendar.ts          # Content Calendar nav item
+    projects.ts                  # Projects folder in sidebar
+    campaigns.ts                 # Campaigns folder in sidebar
+    funnel-leads.ts              # Funnel Leads folder in sidebar
   page-layouts/
     content-layout.ts            # Record page layout with tabs
   front-components/
     main-page.tsx                # App main page component
+    content-metrics-dashboard.tsx # Content metrics dashboard
   logic-functions/
     publish-content.ts           # Publish content logic
     seed-example-contents.ts     # Post-install seed data
   roles/
     default-function.role.ts     # Default app role
+  __tests__/
+    schema.integration-test.ts   # App installation and standard object tests
+    objects.integration-test.ts  # CRUD tests for all custom objects
 ```
 
 ## Development

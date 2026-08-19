@@ -8,7 +8,9 @@
     "npm": "please-use-yarn",
     "yarn": ">=4.0.2"
   },
-  "keywords": ["twenty-app"],
+  "keywords": [
+    "twenty-app"
+  ],
   "packageManager": "yarn@4.9.2",
   "scripts": {
     "twenty": "twenty",
@@ -20,6 +22,7 @@
   "devDependencies": {
     "@types/node": "^24.7.2",
     "@types/react": "^19.0.0",
+    "@types/react-is": "^19",
     "oxlint": "^0.16.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -28,5 +31,9 @@
     "typescript": "^5.9.3",
     "vite-tsconfig-paths": "^4.2.1",
     "vitest": "^3.1.1"
+  },
+  "dependencies": {
+    "react-is": "^19.2.8",
+    "recharts": "^3.10.1"
   }
 }
